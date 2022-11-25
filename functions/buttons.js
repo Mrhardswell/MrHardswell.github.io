@@ -2,7 +2,7 @@
 const video = document.getElementById("myVideo");
 
 // Get the button
-const btn = document.getElementById("myBtn");
+const btn = document.getElementById("playButton");
 
 // Pause and play the video, and change the button text
     function myFunction() {

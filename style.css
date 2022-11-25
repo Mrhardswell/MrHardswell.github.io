@@ -1,52 +1,55 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    /* resize to screen size */
+    width: 100%;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+  }
+  
+  /* Add some content at the bottom of the video/page */
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Style the button used to pause/play the video */
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: rgb(70, 70, 70);
+    color: #fff;
+    cursor: pointer;
+    /* round the corners*/
+    border-radius: 5px;
+    
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+    animation: hovered 5s infinite;
+  }
 
-:root {
-    --black: #000;
-    --grey: #333;
-    --white: #fff;
-    --gold: #c49d01;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(90deg, var(--black), var(--grey));
-    color: var(--white);
-    text-shadow: 1;
-    overflow-wrap: break-word;
-}
-
-a,
-li {
-    text-decoration: none;
-    list-style: none;
-}
-
-/* container */
-.container {
-    max-width: 1440px;
-    height: 80vh;
-    background: rgba(255, 255, 255, 0.15);
-    margin: auto;
-    margin-top: 10vh;
-    border-radius: 10px;
-    box-shadow: 10px 10px 25px 2px rgba(0, 0, 0, 0.5);
-    animation: fadein 2s ease-out; /* animation info / tween info */
-}
-
-/* animation / tween */
-@keyframes fadein {
+  @keyframes hovered {
     0% {
-        box-shadow: none;
-        background: rgba(206, 199, 199, 0.05);
-        color: rgb(224, 213, 213, 0.05);
-
+      transform: scale(1);
     }
-
-    100% {}
-}
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

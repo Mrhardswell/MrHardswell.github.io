@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #000;
+    --grey: #333;
+    --white: #fff;
+    --gold: #c49d01;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(90deg, var(--black), var(--grey));
+    color: var(--white);
+    text-shadow: 1;
+    overflow-wrap: break-word;
+}
+
+a,
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+/* container */
+.container {
+    max-width: 1440px;
+    height: 80vh;
+    background: rgba(255, 255, 255, 0.15);
+    margin: auto;
+    margin-top: 10vh;
+    border-radius: 10px;
+    box-shadow: 10px 10px 25px 2px rgba(0, 0, 0, 0.5);
+    animation: fadein 2s ease-out; /* animation info / tween info */
+}
+
+/* animation / tween */
+@keyframes fadein {
+    0% {
+        box-shadow: none;
+        background: rgba(206, 199, 199, 0.05);
+        color: rgb(224, 213, 213, 0.05);
+
+    }
+
+    100% {}
+}

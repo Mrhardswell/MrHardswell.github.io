@@ -2770,7 +2770,7 @@ textarea.form-control.is-invalid {
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
     color: #fff;
-    background-color: #0984e3
+    background-color: #e32209
 }
 
 .nav-fill>.nav-link,
@@ -3282,8 +3282,8 @@ textarea.form-control.is-invalid {
 .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #0984e3;
-    border-color: #0984e3
+    background-color: #e31809;
+    border-color: #e30909
 }
 
 .page-item.disabled .page-link {
@@ -7753,7 +7753,8 @@ p:not(:last-of-type) {
 @media (min-width: 576px) {
     .btn {
         font-size: 1rem;
-        padding: 0.625rem 1.625rem
+        padding: 0.625rem 1.625rem;
+        transition:all 0.3s ease;
     }
 }
 
@@ -7763,7 +7764,7 @@ p:not(:last-of-type) {
 
 .btn--full {
     border: 1px solid transparent;
-    background-color: #0984e3;
+    background-color: grey;
     color: #eeeeee
 }
 
@@ -7771,19 +7772,23 @@ p:not(:last-of-type) {
 .btn--full:focus,
 .btn--full:active {
     color: #eeeeee;
-    background-color: #0871c2
+    background-color: grey;
+    transform: scale(1.05);
+    border: 1px solid rgb(7, 3, 3);
 }
 
 .btn--ghost {
-    border: 1px solid #0984e3;
-    color: #0984e3
+    border: 1px solid darkgrey;
+    color: grey
 }
 
 .btn--ghost:hover,
 .btn--ghost:focus,
 .btn--ghost:active {
     color: #eeeeee;
-    background-color: #0984e3
+    background-color: grey;
+    transform: scale(1.05);
+    border: 1px solid rgb(7, 3, 3);
 }
 
 .btn__icon-right {

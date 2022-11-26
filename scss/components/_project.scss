@@ -12,7 +12,8 @@
 	@include hover-focus-active {
 		box-shadow: 0 pxToRem(4) pxToRem(8) rgba(0, 0, 0, 0.09);
 		transform: translateY(pxToRem(-4));
-		border-color: $color-grey-light-4;
+		border-color: $color-redstroke;
+
 	}
 
 	&__img-box {

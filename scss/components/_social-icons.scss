@@ -1,0 +1,25 @@
+.social-icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: pxToRem(5);
+	}
+
+	&__icon {
+		width: pxToRem(30);
+		height: pxToRem(30);
+		fill: $color-grey-light-1;
+	}
+
+	&--lg &__icon {
+		width: pxToRem(35);
+		height: pxToRem(35);
+	}
+	&--lg &__link {
+		padding: pxToRem(5) pxToRem(7);
+	}
+}

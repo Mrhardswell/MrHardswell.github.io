@@ -1,38 +1,251 @@
 <!DOCTYPE html>
-<html>
-
-<!-- Head of the page -->
+<html lang="en">
 
 <head>
-    <charset="utf-8">
-        <http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-            <integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz /K68vbdEjh4u"
-                crossorigin="anonymous" referrerpolicy="no-referrer" />
-            <link rel="stylesheet" href="style.css">
-            <title>MrHardswell's Webspace</title> <!-- Title of the page -->
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="MrHardswell landing page.">
+    <meta name="keywords" content="MrHardswell, Roblox, Developer, Programming">
+    <meta name="author" content="MrHardswell">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicon/site.webmanifest">
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>MrHardswell's Page</title>
 </head>
 
-<!-- Body -->
-
 <body>
-    <!-- The video -->
-    <video autoplay muted loop id="myVideo">
-        <source src="./videos/Profile.mp4" type="video/mp4">
-    </video>
 
-    <!-- Optional: some overlay text to describe the video -->
-    <div class="content">
-        <h1>Video Control</h1>
-        <p>Play / Pause</p>
-        <!-- Use a button to pause/play the video with JavaScript -->
-        <button id="playButton" onclick="myFunction()">Pause</button>
-    </div>
+    <header class="header" id="header">
+        <!-- Top fixed navbar -->
+        <nav class="navbar navbar-top navbar-expand-md navbar-dark header__navbar">
+            <div class="container-lg">
+                <a class="navbar-brand" href="#">MrHardswell</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTopCollapsible"
+                    aria-controls="navbarTopCollapsible" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTopCollapsible">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#header">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#work">Work</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
+        <!-- Centered content -->
+        <div class="header__content">
+            <div class="header__img-box">
+                <img src="./img/developer.jpg" alt="MrHardswell" class="header__img">
+            </div>
+            <h1 class="heading-primary">
+                <span class="heading-primary--main">MrHardswell</span>
+                <span class="heading-primary--sub">Programmer, Game Developer</span>
+            </h1>
+            <div class="header__cta-box">
+                <a href="#about" class="btn btn--full">About</a>
+                <a href="#work" class="btn btn--ghost">Work</a>
+            </div>
+        </div>
+
+        <!-- Absolute positioned social icons -->
+        <div class="header__social-icons social-icons">
+            <a href="#" class="social-icons__link">
+                <svg class="icon social-icons__icon">
+                    <use xlink:href="./img/SVG/symbol-defs.svg#icon-facebook"></use>
+                </svg>
+            </a>
+            <a href="#" class="social-icons__link">
+                <svg class="icon social-icons__icon">
+                    <use xlink:href="./img/SVG/symbol-defs.svg#icon-twitter"></use>
+                </svg>
+            </a>
+            <a href="#" class="social-icons__link">
+                <svg class="icon social-icons__icon">
+                    <use xlink:href="./img/SVG/symbol-defs.svg#icon-instagram"></use>
+                </svg>
+            </a>
+            <a href="#" class="social-icons__link">
+                <svg class="icon social-icons__icon">
+                    <use xlink:href="./img/SVG/symbol-defs.svg#icon-whatsapp"></use>
+                </svg>
+            </a>
+            <a href="#" class="social-icons__link">
+                <svg class="icon social-icons__icon">
+                    <use xlink:href="./img/SVG/symbol-defs.svg#icon-discord"></use>
+                </svg>
+            </a>
+            <a href="#" class="social-icons__link">
+                <svg class="icon social-icons__icon">
+                    <use xlink:href="./img/SVG/symbol-defs.svg#icon-linkedin"></use>
+                </svg>
+            </a>
+            <a href="#" class="social-icons__link">
+                <svg class="icon social-icons__icon">
+                    <use xlink:href="./img/SVG/symbol-defs.svg#icon-medium"></use>
+                </svg>
+            </a>
+
+        </div>
+
+    </header>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="heading-secondary">About me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="about__content">
+                        <p>I'm MrHardswell, a hardworking and dedicated programmer. I have been programming for 3 years
+                            and have
+                            been developing games for over a year on the Roblox platform. I have a passion for
+                            programming and I love to learn new things.
+                            I am currently working on a game called "Distortion" which is a horror game being developed
+                            by Ancestral Games.</p>
+                        <p>I'm a self-taught programmer who has been programming for 2 years. I have experience in C#,
+                            C++, Lua, JavaScript, HTML, CSS, and Python. I have also worked with Unreal Engine.</p>
+
+                    </div>
+                    <div class="about__skills my-4">
+                        <h3 class="heading-tertiary">Technologies I know:</h3>
+                        <div class="about__skills-icons mt-2">
+                            <svg class="icon about__skills-icon">
+                                <use xlink:href="./img/SVG/symbol-defs.svg#icon-html5"></use>
+                            </svg>
+                            <svg class="icon about__skills-icon">
+                                <use xlink:href="./img/SVG/symbol-defs.svg#icon-css3"></use>
+                            </svg>
+                            <svg class="icon about__skills-icon">
+                                <use xlink:href="./img/SVG/symbol-defs.svg#icon-javascript"></use>
+                            </svg>
+                            <svg class="icon about__skills-icon">
+                                <use xlink:href="./img/SVG/symbol-defs.svg#icon-sass"></use>
+                            </svg>
+                            <svg class="icon about__skills-icon">
+                                <use xlink:href="./img/SVG/symbol-defs.svg#icon-git"></use>
+                            </svg>
+                            <svg class="icon about__skills-icon">
+                                <use xlink:href="./img/SVG/symbol-defs.svg#icon-linux"></use>
+                            </svg>
+
+                            <svg class="icon about__skills-icon">
+                                <use xlink:href="./img/SVG/symbol-defs.svg#icon-discord"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="work" id="work">
+
+        <div class="container">
+            <h2 class="heading-secondary">Things I've made</h2>
+
+            <ul class="nav nav-tabs justify-content-center mt-5 mb-4" id="workTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="projects-tab" data-toggle="tab" href="#projects" role="tab"
+                        aria-controls="projects" aria-selected="true">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="snippets-tab" data-toggle="tab" href="#snippets" role="tab"
+                        aria-controls="snippets" aria-selected="false">Snippets</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+
+                <div class="work__content work__content--projects tab-pane fade show active" id="projects"
+                    role="tabpanel" aria-labelledby="projects-tab">
+                    <div class="row justify-content-center">
+                        <div class="project-box col-sm-12 col-md-6 col-lg-4 mb-5">
+                            <div class="project">
+                                <div class="project__img-box">
+                                    <img src="https://tr.rbxcdn.com/6451fb10b960503927b43518b048f63a/768/432/Image/Png" alt="Project 1" class="project__img img-fluid">
+                                </div>
+                                <div class="project__content-box">
+                                    <h3 class="heading-tertiary">Distortion</h3>
+                                    <p class="project__details"> Currently being developed</p>
+                                    <div class="project__cta-box text-center">
+                                        <a href="https://www.roblox.com/games/10604747428/Distortion" class="btn btn--ghost">
+                                            <svg class="icon btn__icon-left icon-earth">
+                                                <use xlink:href="img/SVG/symbol-defs.svg#icon-earth"></use>
+                                            </svg>
+                                            Demo</a>
+                                        <a href="https://github.com/Ancestral-Games/" class="btn btn--full">
+                                            <svg class="icon btn__icon-left icon-earth">
+                                                <use xlink:href="img/SVG/symbol-defs.svg#icon-github"></use>
+                                            </svg>
+                                            Source</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work__content work__content--snippets tab-pane fade" id="snippets" role="tabpanel"
+                    aria-labelledby="snippets-tab">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <table class="table table-sm table-responsive-sm table-bordered table-striped my-5">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Technology</th>
+                                        <th scope="col">Updated</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td><a href="#">Lorem ipsum doloraing elit.</a></td>
+                                        <td>Laravel</td>
+                                        <td>05-12-2019</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <nav aria-label="Work Code Snippets" class="my-4">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/vendors/jquery/jquery.min.js"></script>
+    <script src="./js/vendors/waypoints/jquery.waypoints.min.js"></script>
+    <script src="./js/vendors/popper/popper.min.js"></script>
+    <script src="./js/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
-
-<script src="./functions/buttons.js"></script>
 
 </html>

@@ -1,7 +1,7 @@
 {
-	"name": "0xfolio",
+	"name": "mrhardswell-portfolio",
 	"version": "1.0.0",
-	"description": "A free HTML portfolio template for developers.",
+	"description": "My portfolio",
 	"main": "index.html",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -13,19 +13,21 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/0xAliRaza/0xFolio.git"
+		"url": "https://github.com/Mrhardswell/MrHardswell.github.io.git"
 	},
 	"keywords": [
 		"html",
 		"css",
-		"portfolio-template",
-		"free-to-use"
+		"scss",
+		"javascript",
+		"node",
+		"npm"
 	],
 	"author": {
-		"name": "Ali Raza",
-		"url": "https://0xali.com",
-		"github": "https://github.com/0xAliRaza",
-		"twitter": "https://twitter.com/0xAliRaza"
+		"name": "MrHardswell",
+		"url": "https://MrHardswell.github.io",
+		"github": "https://github.com/MrHardswell",
+		"twitter": "https://twitter.com/MrHardswell"
 	},
 	"license": "MIT",
 	"dependencies": {},

@@ -18,16 +18,16 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Prevents scrollbars due to video overflow */
+            overflow: auto;
         }
 
         #video-background {
-            position: fixed;
+            position: relative;
             right: 0;
             bottom: 0;
             min-width: 100%;
             min-height: 100%;
-            width: auto;
+            width: fit-content;
             height: auto;
             z-index: -1;
         }

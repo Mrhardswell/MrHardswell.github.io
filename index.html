@@ -14,11 +14,35 @@
     <link rel="stylesheet" href="./css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <title>MrHardswell's Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevents scrollbars due to video overflow */
+        }
 
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+    </style>
 </head>
 
 <body>
+
+    <video autoplay muted loop id="video-background">
+        <source src="./vid/BackgroundVideo.mp4" type="video/mp4">
+        <!-- You can add multiple source elements for different video formats -->
+    </video>
+
     <header class="header" id="header">
+        
         <!-- Top fixed navbar -->
         <nav class="navbar navbar-top navbar-expand-md navbar-dark header__navbar">
             <div class="container-lg">

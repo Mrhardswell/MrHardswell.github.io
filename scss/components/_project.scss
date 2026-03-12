@@ -36,4 +36,17 @@
 	&__cta-box {
 		margin: pxToRem(16) 0 pxToRem(8);
 	}
+
+	&__stats {
+		display: flex;
+		justify-content: center;
+		gap: pxToRem(20);
+		font-size: pxToRem(14);
+		color: #aaa;
+		margin-bottom: pxToRem(16);
+
+		strong {
+			color: #fff;
+		}
+	}
 }

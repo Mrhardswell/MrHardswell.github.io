@@ -185,7 +185,9 @@
                                 <div class="project__content-box">
                                     <h3 class="heading-tertiary">Aquatica Observatory</h3>
                                     <p class="project__details">Dive into Roblox's most immersive aquarium experience. Built with real ocean science.</p>
-                                    <div id="aq-stats" class="project__stats mb-3" style="display: flex; justify-content: center; gap: 20px; font-size: 0.9rem; color: #aaa;"></div>
+                                    <div id="aq-stats" class="project__stats">
+                                        <span>Loading stats...</span>
+                                    </div>
                                     <div class="project__cta-box text-center">
                                         <a href="https://www.roblox.com/games/78959878729166/Aquatica-Observatory"
                                             class="btn btn--ghost">
@@ -239,51 +241,6 @@
     <script src="./js/vendors/popper/popper.min.js"></script>
     <script src="./js/vendors/bootstrap/bootstrap.min.js"></script>
     <script src="./js/script.js"></script>
-
-    <!-- Live Game Stats Updater -->
-    <script>
-        // Format numbers (e.g., 3433530 -> 3.4M+)
-        function formatNumber(num) {
-            if (num >= 1000000) return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M+';
-            if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K+';
-            return num.toString();
-        }
-
-        // Generate stats HTML from API data
-        function renderAquaticaStats(playing, visits, favorites) {
-            const container = document.getElementById('aq-stats');
-            if (container) {
-                container.innerHTML = `
-                    <span><strong style="color: #fff;">${playing}</strong> playing</span>
-                    <span><strong style="color: #fff;">${formatNumber(visits)}</strong> visits</span>
-                    <span><strong style="color: #fff;">${formatNumber(favorites)}</strong> favorites</span>
-                `;
-            }
-        }
-
-        // Fetch live data and render
-        async function fetchAquaticaStats() {
-            try {
-                const response = await fetch('https://games.roblox.com/v1/games?universeIds=6657534906');
-                const data = await response.json();
-                
-                if (data.data && data.data.length > 0) {
-                    const game = data.data[0];
-                    renderAquaticaStats(
-                        game.playing || 0,
-                        game.visits || 0,
-                        game.favoritedCount || 0
-                    );
-                }
-            } catch (error) {
-                console.log('Failed to fetch live stats:', error);
-            }
-        }
-        
-        // Initial fetch and start interval
-        fetchAquaticaStats();
-        setInterval(fetchAquaticaStats, 60000);
-    </script>
 
 </body>
 

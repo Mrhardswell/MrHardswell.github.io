@@ -185,11 +185,7 @@
                                 <div class="project__content-box">
                                     <h3 class="heading-tertiary">Aquatica Observatory</h3>
                                     <p class="project__details">Dive into Roblox's most immersive aquarium experience. Built with real ocean science.</p>
-                                    <div class="project__stats mb-3" style="display: flex; justify-content: center; gap: 20px; font-size: 0.9rem; color: #aaa;">
-                                        <span><strong id="aq-playing" style="color: #fff;">150</strong> playing</span>
-                                        <span><strong id="aq-visits" style="color: #fff;">3.4M+</strong> visits</span>
-                                        <span><strong id="aq-favorites" style="color: #fff;">44K+</strong> favorites</span>
-                                    </div>
+                                    <div id="aq-stats" class="project__stats mb-3" style="display: flex; justify-content: center; gap: 20px; font-size: 0.9rem; color: #aaa;"></div>
                                     <div class="project__cta-box text-center">
                                         <a href="https://www.roblox.com/games/78959878729166/Aquatica-Observatory"
                                             class="btn btn--ghost">
@@ -246,46 +242,47 @@
 
     <!-- Live Game Stats Updater -->
     <script>
-        // Aquatica Observatory Universe ID
-        const AQUATICA_UNIVERSE_ID = 6657534906;
-        
-        async function updateAquaticaStats() {
+        // Format numbers (e.g., 3433530 -> 3.4M+)
+        function formatNumber(num) {
+            if (num >= 1000000) return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M+';
+            if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K+';
+            return num.toString();
+        }
+
+        // Generate stats HTML from API data
+        function renderAquaticaStats(playing, visits, favorites) {
+            const container = document.getElementById('aq-stats');
+            if (container) {
+                container.innerHTML = `
+                    <span><strong style="color: #fff;">${playing}</strong> playing</span>
+                    <span><strong style="color: #fff;">${formatNumber(visits)}</strong> visits</span>
+                    <span><strong style="color: #fff;">${formatNumber(favorites)}</strong> favorites</span>
+                `;
+            }
+        }
+
+        // Fetch live data and render
+        async function fetchAquaticaStats() {
             try {
-                const response = await fetch(`https://games.roblox.com/v1/games?universeIds=${AQUATICA_UNIVERSE_ID}`);
+                const response = await fetch('https://games.roblox.com/v1/games?universeIds=6657534906');
                 const data = await response.json();
                 
                 if (data.data && data.data.length > 0) {
                     const game = data.data[0];
-                    const playing = game.playing || 0;
-                    const visits = game.visits || 0;
-                    const favorites = game.favoritedCount || 0;
-                    
-                    // Format numbers (e.g., 3433530 -> 3.4M+)
-                    const formatNumber = (num) => {
-                        if (num >= 1000000) return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M+';
-                        if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K+';
-                        return num.toString();
-                    };
-                    
-                    // Update the stats on the page
-                    const playingEl = document.getElementById('aq-playing');
-                    const visitsEl = document.getElementById('aq-visits');
-                    const favoritesEl = document.getElementById('aq-favorites');
-                    
-                    if (playingEl) playingEl.textContent = playing;
-                    if (visitsEl) visitsEl.textContent = formatNumber(visits);
-                    if (favoritesEl) favoritesEl.textContent = formatNumber(favorites);
+                    renderAquaticaStats(
+                        game.playing || 0,
+                        game.visits || 0,
+                        game.favoritedCount || 0
+                    );
                 }
             } catch (error) {
                 console.log('Failed to fetch live stats:', error);
             }
         }
         
-        // Update on page load
-        updateAquaticaStats();
-        
-        // Update every 60 seconds
-        setInterval(updateAquaticaStats, 60000);
+        // Initial fetch and start interval
+        fetchAquaticaStats();
+        setInterval(fetchAquaticaStats, 60000);
     </script>
 
 </body>

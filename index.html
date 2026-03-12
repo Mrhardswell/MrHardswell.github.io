@@ -186,9 +186,9 @@
                                     <h3 class="heading-tertiary">Aquatica Observatory</h3>
                                     <p class="project__details">Dive into Roblox's most immersive aquarium experience. Built with real ocean science.</p>
                                     <div class="project__stats mb-3" style="display: flex; justify-content: center; gap: 20px; font-size: 0.9rem; color: #aaa;">
-                                        <span><strong style="color: #fff;">150</strong> playing</span>
-                                        <span><strong style="color: #fff;">3.4M+</strong> visits</span>
-                                        <span><strong style="color: #fff;">44K+</strong> favorites</span>
+                                        <span><strong id="aq-playing" style="color: #fff;">150</strong> playing</span>
+                                        <span><strong id="aq-visits" style="color: #fff;">3.4M+</strong> visits</span>
+                                        <span><strong id="aq-favorites" style="color: #fff;">44K+</strong> favorites</span>
                                     </div>
                                     <div class="project__cta-box text-center">
                                         <a href="https://www.roblox.com/games/78959878729166/Aquatica-Observatory"
@@ -268,14 +268,13 @@
                     };
                     
                     // Update the stats on the page
-                    const statsContainer = document.querySelector('#projects .project__stats');
-                    if (statsContainer) {
-                        statsContainer.innerHTML = `
-                            <span><strong style="color: #fff;">${playing}</strong> playing</span>
-                            <span><strong style="color: #fff;">${formatNumber(visits)}</strong> visits</span>
-                            <span><strong style="color: #fff;">${formatNumber(favorites)}</strong> favorites</span>
-                        `;
-                    }
+                    const playingEl = document.getElementById('aq-playing');
+                    const visitsEl = document.getElementById('aq-visits');
+                    const favoritesEl = document.getElementById('aq-favorites');
+                    
+                    if (playingEl) playingEl.textContent = playing;
+                    if (visitsEl) visitsEl.textContent = formatNumber(visits);
+                    if (favoritesEl) favoritesEl.textContent = formatNumber(favorites);
                 }
             } catch (error) {
                 console.log('Failed to fetch live stats:', error);

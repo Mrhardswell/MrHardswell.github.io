@@ -121,12 +121,12 @@ sup {
 }
 
 a {
-  color: #b10000;
+  color: #00d9ff;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: rgb(100.5, 0, 0);
+  color: rgb(0, 151.9, 178.5);
   text-decoration: underline;
 }
 
@@ -1330,21 +1330,21 @@ template {
 .table-primary,
 .table-primary > th,
 .table-primary > td {
-  background-color: rgb(233.16, 183.6, 183.6);
+  background-color: rgb(183.6, 244.36, 255);
 }
 .table-primary th,
 .table-primary td,
 .table-primary thead th,
 .table-primary tbody + tbody {
-  border-color: rgb(214.44, 122.4, 122.4);
+  border-color: rgb(122.4, 235.24, 255);
 }
 
 .table-hover .table-primary:hover {
-  background-color: rgb(227.187027027, 164.072972973, 164.072972973);
+  background-color: rgb(158.1, 240.56, 255);
 }
 .table-hover .table-primary:hover > td,
 .table-hover .table-primary:hover > th {
-  background-color: rgb(227.187027027, 164.072972973, 164.072972973);
+  background-color: rgb(158.1, 240.56, 255);
 }
 
 .table-secondary,
@@ -1617,9 +1617,9 @@ template {
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border-color: rgb(255, 49.5, 49.5);
+  border-color: rgb(127.5, 236, 255);
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(177, 0, 0, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 217, 255, 0.25);
 }
 .form-control::placeholder {
   color: #6c757d;
@@ -2237,7 +2237,7 @@ textarea.form-control {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #b10000;
+  background-color: #00d9ff;
 }
 .dropdown-item.disabled, .dropdown-item:disabled {
   color: #6c757d;
@@ -2322,7 +2322,7 @@ textarea.form-control {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #b10000;
+  background-color: #00d9ff;
 }
 
 .nav-fill > .nav-link,
@@ -2723,13 +2723,13 @@ textarea.form-control {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #b10000;
+  color: #00d9ff;
   background-color: #fff;
   border: 1px solid #dee2e6;
 }
 .page-link:hover {
   z-index: 2;
-  color: rgb(100.5, 0, 0);
+  color: rgb(0, 151.9, 178.5);
   text-decoration: none;
   background-color: #e9ecef;
   border-color: #dee2e6;
@@ -2737,7 +2737,7 @@ textarea.form-control {
 .page-link:focus {
   z-index: 3;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(177, 0, 0, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 217, 255, 0.25);
 }
 
 .page-item:first-child .page-link {
@@ -2752,8 +2752,8 @@ textarea.form-control {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #b10000;
-  border-color: #b10000;
+  background-color: #00d9ff;
+  border-color: #00d9ff;
 }
 .page-item.disabled .page-link {
   color: #6c757d;
@@ -2828,16 +2828,16 @@ a.badge:hover, a.badge:focus {
 }
 
 .badge-primary {
-  color: #fff;
-  background-color: #b10000;
+  color: #212529;
+  background-color: #00d9ff;
 }
 a.badge-primary:hover, a.badge-primary:focus {
-  color: #fff;
-  background-color: #7e0000;
+  color: #212529;
+  background-color: rgb(0, 173.6, 204);
 }
 a.badge-primary:focus, a.badge-primary.focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(177, 0, 0, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(0, 217, 255, 0.5);
 }
 
 .badge-secondary {
@@ -2956,13 +2956,13 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .bg-primary {
-  background-color: #b10000 !important;
+  background-color: #00d9ff !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #7e0000 !important;
+  background-color: rgb(0, 173.6, 204) !important;
 }
 
 .bg-secondary {
@@ -3084,7 +3084,7 @@ button.bg-dark:focus {
 }
 
 .border-primary {
-  border-color: #b10000 !important;
+  border-color: #00d9ff !important;
 }
 
 .border-secondary {
@@ -6103,11 +6103,11 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #b10000 !important;
+  color: #00d9ff !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: rgb(100.5, 0, 0) !important;
+  color: rgb(0, 151.9, 178.5) !important;
 }
 
 .text-secondary {
@@ -6285,7 +6285,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 1.875rem;
-  color: #b10000;
+  color: #00d9ff;
   letter-spacing: 1px;
 }
 .heading-secondary::after {
@@ -6301,7 +6301,7 @@ body {
   display: block;
   font-size: 1.25rem;
   font-weight: 400;
-  color: #b10000;
+  color: #00d9ff;
 }
 @media (min-width: 576px) {
   .heading-tertiary {
@@ -6440,10 +6440,10 @@ p:not(:last-of-type) {
 }
 .navbar-top .navbar-nav .nav-link:hover, .navbar-top .navbar-nav .nav-link:focus, .navbar-top .navbar-nav .nav-link:active {
   color: #fff;
-  border-bottom: 2px solid #b10000;
+  border-bottom: 2px solid #00d9ff;
 }
 .navbar-top .navbar-nav .active > .nav-link {
-  border-bottom: 2px solid #b10000;
+  border-bottom: 2px solid #00d9ff;
 }
 @media (min-width: 768px) {
   .navbar-top .navbar-brand {
@@ -6558,20 +6558,20 @@ p:not(:last-of-type) {
 }
 .btn--full {
   border: 1px solid transparent;
-  background-color: #b10000;
+  background-color: #00d9ff;
   color: #eeeeee;
 }
 .btn--full:hover, .btn--full:focus, .btn--full:active {
   color: #eeeeee;
-  background-color: #5c0000;
+  background-color: #007a99;
 }
 .btn--ghost {
-  border: 1px solid #b10000;
-  color: #b10000;
+  border: 1px solid #00d9ff;
+  color: #00d9ff;
 }
 .btn--ghost:hover, .btn--ghost:focus, .btn--ghost:active {
   color: #eeeeee;
-  background-color: #b10000;
+  background-color: #00d9ff;
 }
 .btn__icon-right {
   margin-left: 0.25rem;
@@ -6620,7 +6620,7 @@ p:not(:last-of-type) {
 .project:hover, .project:focus, .project:active {
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.09);
   transform: translateY(-0.25rem);
-  border-color: #b10000;
+  border-color: #00d9ff;
 }
 .project__img-box {
   cursor: pointer;
@@ -6858,8 +6858,8 @@ section {
   min-height: 2.8125rem;
 }
 .contact .form-group .form-control:focus {
-  border: 1px solid rgba(177, 0, 0, 0.3);
-  box-shadow: 0 0 0.3125rem 0 rgba(177, 0, 0, 0.2);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  box-shadow: 0 0 0.3125rem 0 rgba(0, 217, 255, 0.2);
 }
 
 video {

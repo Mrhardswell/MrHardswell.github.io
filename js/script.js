@@ -77,22 +77,76 @@ $('#navbarTopCollapsible').on('hide.bs.collapse', function () {
 		if (!container) return;
 
 		container.innerHTML = `
-			<span><strong style="color: #fff;">${playing}</strong> playing</span>
-			<span><strong style="color: #fff;">${formatNumber(visits)}</strong> visits</span>
-			<span><strong style="color: #fff;">${formatNumber(favorites)}</strong> favorites</span>
+			<div class="stat-item">
+				<span class="stat-value">${playing}</span>
+				<span class="stat-label">playing</span>
+			</div>
+			<div class="stat-item">
+				<span class="stat-value">${formatNumber(visits)}</span>
+				<span class="stat-label">visits</span>
+			</div>
+			<div class="stat-item">
+				<span class="stat-value">${formatNumber(favorites)}</span>
+				<span class="stat-label">favorites</span>
+			</div>
+		`;
+		container.classList.add('loaded');
+	}
+
+	function showLoading() {
+		const container = document.getElementById('aq-stats');
+		if (!container) return;
+
+		container.innerHTML = `
+			<div class="stat-loading">
+				<div class="loading-dots">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<span class="loading-text">Fetching live stats</span>
+			</div>
 		`;
 	}
 
-	function showError() {
+	function showErrorWithRetry() {
 		const container = document.getElementById('aq-stats');
-		if (container) {
-			container.innerHTML = '<span style="color: #888;">Stats unavailable</span>';
-		}
+		if (!container) return;
+
+		container.innerHTML = `
+			<div class="stat-offline">
+				<svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-4V7h2v6h-2z"/>
+				</svg>
+				<span class="offline-text">Live stats unavailable offline</span>
+				<a href="https://www.roblox.com/games/78959878729166/Aquatica-Observatory" 
+				   target="_blank" class="stat-link">
+					View on Roblox →
+				</a>
+			</div>
+		`;
+		container.classList.add('error');
 	}
 
 	async function fetchStats() {
+		showLoading();
+		
 		try {
-			const response = await fetch(`https://games.roblox.com/v1/games?universeIds=${AQUATICA_UNIVERSE_ID}`);
+			const controller = new AbortController();
+			const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+			
+			const response = await fetch(
+				`https://games.roblox.com/v1/games?universeIds=${AQUATICA_UNIVERSE_ID}`,
+				{ 
+					signal: controller.signal,
+					headers: { 'Accept': 'application/json' }
+				}
+			);
+			
+			clearTimeout(timeoutId);
+
+			if (!response.ok) throw new Error(`HTTP ${response.status}`);
+			
 			const data = await response.json();
 
 			if (data.data && data.data.length > 0) {
@@ -103,26 +157,18 @@ $('#navbarTopCollapsible').on('hide.bs.collapse', function () {
 					game.favoritedCount || 0
 				);
 			} else {
-				showError();
+				throw new Error('No data');
 			}
 		} catch (error) {
-			console.error('Failed to fetch live stats:', error);
-			showLocalDevMessage();
+			console.log('Stats fetch failed:', error.message);
+			showErrorWithRetry();
 		}
 	}
 
-	function showLocalDevMessage() {
-		const container = document.getElementById('aq-stats');
-		if (container) {
-			container.innerHTML = `
-				<span style="color: #888;"><strong style="color: #00d9ff;">Live stats</strong> available on production site</span>
-			`;
-		}
-	}
-
-	// Fetch on page load
+	// Initialize if element exists
 	if (document.getElementById('aq-stats')) {
 		fetchStats();
+		// Retry every 60 seconds
 		setInterval(fetchStats, UPDATE_INTERVAL);
 	}
 })();
